@@ -17,6 +17,26 @@ module.exports = {
         name: 'uploads',
       },
     },
+    // {
+    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //     {
+    //         family: `Roboto`,
+    //         variants: [`400`]
+    //       },
+    //       {
+    //         family: `Playfair Display`, variants: [`700`] //, subsets: [`latin`]
+    //       },
+    //     ],
+    //   },
+    // },
+    {
+        resolve: `gatsby-plugin-typography`,
+        options: {
+          pathToConfigModule: `src/components/fonts/typography.js`,
+        }
+     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -61,6 +81,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-styled-components`,
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {

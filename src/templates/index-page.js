@@ -6,6 +6,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
+import Card from '../components/Card/Card.js';
 
 export const IndexPageTemplate = ({
   image,
@@ -14,14 +15,10 @@ export const IndexPageTemplate = ({
   intro,
 }) => (
   <div>
-    <Content>
-      <Text>
+    <Card>
         <h1 className="text-section title">{title}</h1>
-        <h2 className="text-section subheading">{heading} {heading} {heading} {heading} {heading} {heading} {heading}
-        {heading} {heading} {heading} {heading} {heading} {heading} {heading} {heading} {heading} {heading} {heading} {heading}</h2>
-      </Text>
-
-    </Content>
+        <h2 className="text-section subheading">{heading} </h2>
+    </Card>
   </div>
 )
 
@@ -59,33 +56,31 @@ IndexPage.propTypes = {
 
 export default IndexPage;
 
-const Text = styled.div`
-  top: 50%; left: 50%; 
-  width: 100%; max-height: 100%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  overflow: auto;
-  .title{
-    font-size: 2em;
-  }
-  .subheading{
-    font-size: 1.8em;
-  }
-`
-const Content = styled.div`
-  background-color: blue;
-  padding: 10px;
-  max-width: 800px;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  min-width: 50%;
-  min-height: 50%;
-  text-align: center;
-  background-image: linear-gradient(25deg, ${props => props.theme.primary}, ${props => props.theme.secondary});
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+// const Text = styled.div`
 
-`
+
+// `
+// const Content = styled.div`
+//   max-width: 800px;
+//   top: 50%; left: 50%;
+//   min-width: 50%;
+//   max-height: 80vh;
+//   height: 500px;
+//   position: absolute;
+//   transform: translate(-50%, -50%);
+//   text-align: center;
+//   background-image: linear-gradient(25deg, ${props => props.theme.primary}, ${props => props.theme.secondary});
+//   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+//   .content{
+//     width: 100%; 
+//     max-height:100%;
+//     position: absolute;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     overflow: auto;
+//   }
+
+// `
 
 
 export const pageQuery = graphql`

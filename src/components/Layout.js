@@ -1,16 +1,18 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
-import './all.sass'
+import Navbar from '../components/Navbar/Navbar.js'
+//import './all.sass'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from "gatsby"
 import styled, {ThemeProvider} from 'styled-components';
+import NoScript from './NoScript/NoScript.js';
 
 const theme = {
   primary: "hotpink",
   secondary: "yellow",
-  neutral: 'white'
+  neutral: 'white',
+  text: 'grey'
 };
 
 
@@ -58,8 +60,11 @@ const TemplateWrapper = ({ children }) => {
           <Bg>
             <div className="shape" />
           </Bg>
-          <Navbar />
-          <div>{children}</div>
+          <Site>
+            <Navbar />
+            <div>{children}</div>
+            <NoScript />
+          </Site>
         </Container>
       </ThemeProvider>
 
@@ -71,11 +76,14 @@ const TemplateWrapper = ({ children }) => {
 export default TemplateWrapper
 
 const Container = styled.div`
+
+`
+const Site = styled.div`
   min-height: 100vh;
   max-width: 100vw;
-  background-color: ${props => props.theme.neutral};
+  z-index: 2;
+  position: relative;
 `
-
 const Bg = styled.div`
   @keyframes expand{
     from {
@@ -87,11 +95,15 @@ const Bg = styled.div`
   }
   position: fixed;
   top:0px; right:0px; bottom:0px; left: 0px;
+
+  background-color: ${props => props.theme.neutral};
+  z-index:0;
   .shape{
     width: 100px; height: 100px;
     border: 10px solid ${props => props.theme.primary};
     animation: expand 2s  ease-in infinite;
     position: absolute;
+    z-index:;
     top: calc(50% - 50px); left: calc(50% - 50px);
     transform-origin: center center;
   }
