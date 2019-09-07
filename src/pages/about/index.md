@@ -1,7 +1,7 @@
 ---
-templateKey: 'about-page'
-path: /about
-title: About our values
+templateKey: about-page
+title: Infinite Runner
 ---
 ### Runner for Charity
-A game where the profits go to charity.
+
+A runner game where the profits go to charityte. Rotate to fit through the incomming shape.
