@@ -6,7 +6,7 @@ import Typography from 'typography';
 const typo = new Typography({
   baseFontSize: '16px',
   baseLineHeight: 1.666,
-  headerFontFamily: ['Playfair Display', 'georgia', 'serif'],
+  headerFontFamily: ['Monoton', 'georgia', 'serif'],
   bodyFontFamily: ['Roboto', 'sans-serif'],
   scaleRatio: 1.3
 })

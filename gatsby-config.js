@@ -17,20 +17,19 @@ module.exports = {
         name: 'uploads',
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
-    //   options: {
-    //     fonts: [
-    //     {
-    //         family: `Roboto`,
-    //         variants: [`400`]
-    //       },
-    //       {
-    //         family: `Playfair Display`, variants: [`700`] //, subsets: [`latin`]
-    //       },
-    //     ],
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+        {
+            family: `Roboto`, variants: [`400`]
+          },
+          {
+            family: `Monoton`, variants: [`400`] //, subsets: [`latin`]
+          },
+        ],
+      },
+    },
     {
         resolve: `gatsby-plugin-typography`,
         options: {
