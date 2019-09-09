@@ -100,10 +100,14 @@ const Bg = styled.div`
       opacity: 1;
     }
     20%{
-      transform: scale(45) rotate(45deg) ;
+      transform: scale(55) rotate(45deg) ;
+    }
+    21%{
+      transform: scale(55) rotate(45deg);
+      opacity:0;
     }
     100%{
-      transform: scale(45) rotate(45deg);
+      transform: scale(55) rotate(45deg);
     }
   }
   @keyframes expand{
@@ -116,10 +120,14 @@ const Bg = styled.div`
       opacity: 1;
     }
     20%{
-      transform: scale(45);
+      transform: scale(55);
+    }
+    21%{
+      transform: scale(55);
+      opacity:0;
     }
     100%{
-      transform: scale(45);
+      transform: scale(55);
     }
   }
   position: fixed;
