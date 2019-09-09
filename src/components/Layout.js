@@ -1,18 +1,19 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
-import Footer from '../components/Footer'
+import { Helmet } from 'react-helmet';
 import Navbar from '../components/Navbar/Navbar.js'
 //import './all.sass'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from "gatsby"
 import styled, {ThemeProvider} from 'styled-components';
 import NoScript from './NoScript/NoScript.js';
+import './NoScript/NoScript.css';
 
 const theme = {
   primary: "hotpink",
   secondary: "yellow",
   neutral: 'white',
-  text: 'grey'
+  text: 'grey',
+  bgShapeBorderSize: '30px'
 };
 
 
@@ -24,6 +25,7 @@ const TemplateWrapper = ({ children }) => {
         <html lang="en" />
         <title>{title}</title>
         <meta name="description" content={description} />
+        <meta name="robots" content="noindex, nofollow" />
 
         <link
           rel="apple-touch-icon"
@@ -58,11 +60,14 @@ const TemplateWrapper = ({ children }) => {
       <ThemeProvider theme={theme}>
         <Container>
           <Bg>
-            <div className="shape" />
+            <div className="shape shapeA" />
+            <div className="shape shapeB" />
+            <div className="shape shapeC" />
+            <div className="shape shapeD" />
           </Bg>
           <Site>
-            <Navbar />
-            <div>{children}</div>
+            <Navbar className="noscriptFadeIn"  />
+            <div className="noscriptFadeIn" style={{height: '100%'}}>{children}</div>
             <NoScript />
           </Site>
         </Container>
@@ -79,18 +84,42 @@ const Container = styled.div`
 
 `
 const Site = styled.div`
-  min-height: 100vh;
+  height: 100vh;
   max-width: 100vw;
   z-index: 2;
   position: relative;
 `
 const Bg = styled.div`
-  @keyframes expand{
-    from {
-      transform: scale(0.1) rotate(45deg) ;
+  @keyframes expand45{
+    0% {
+      transform: scale(0.1) rotate(45deg);
+      opacity: 0;
     }
-    to{
-      transform: scale(25) rotate(45deg);
+    1% {
+      transform: scale(0.1) rotate(45deg);
+      opacity: 1;
+    }
+    20%{
+      transform: scale(45) rotate(45deg) ;
+    }
+    100%{
+      transform: scale(45) rotate(45deg);
+    }
+  }
+  @keyframes expand{
+    0% {
+      transform: scale(0.1);
+      opacity: 0;
+    }
+    1% {
+      transform: scale(0.1);
+      opacity: 1;
+    }
+    20%{
+      transform: scale(45);
+    }
+    100%{
+      transform: scale(45);
     }
   }
   position: fixed;
@@ -100,11 +129,25 @@ const Bg = styled.div`
   z-index:0;
   .shape{
     width: 100px; height: 100px;
-    border: 10px solid ${props => props.theme.primary};
-    animation: expand 2s  ease-in infinite;
     position: absolute;
-    z-index:;
     top: calc(50% - 50px); left: calc(50% - 50px);
     transform-origin: center center;
+    opacity: 0;
+  }
+  .shapeA{
+    animation: expand45 10s  ease-in 0s infinite;
+    border: ${props => props.theme.bgShapeBorderSize} solid ${props => props.theme.primary};
+  }
+  .shapeB{
+    animation: expand 10s  ease-in 3s infinite;
+    border: ${props => props.theme.bgShapeBorderSize} solid ${props => props.theme.secondary};
+  }
+  .shapeC{
+    animation: expand45 10s  ease-in 5.5s infinite;
+    border: ${props => props.theme.bgShapeBorderSize} solid red;
+  }
+  .shapeD{
+    animation: expand 10s  ease-in 8s infinite;
+    border: ${props => props.theme.bgShapeBorderSize} solid orange;
   }
 `

@@ -17,7 +17,7 @@ const Navbar = class extends React.Component {
   render() {
     return (
       <Nav
-        className="navbar is-transparent"
+        className={`navbar is-transparent ${this.props.className}`}
         role="navigation"
         aria-label="main-navigation"
       >

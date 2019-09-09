@@ -88,12 +88,30 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        develop: true, // Activates purging in npm run develop
-        purgeOnly: ['/all.sass'], // applies purging only on the bulma css file
+        name: `Mathis Runner App`,
+        short_name: `Runner App`,
+        start_url: `/`,
+        background_color: `orange`,
+        theme_color: `hotpink`,
+        display: `fullscreen`,
+        icon: `src/img/randomIcon.png`
       },
-    }, // must be after other CSS plugins
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        offlineGoogleAnalytics: true
+      },
+    },
+    // {
+    //   resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
+    //   options: {
+    //     develop: true, // Activates purging in npm run develop
+    //     purgeOnly: ['/all.sass'], // applies purging only on the bulma css file
+    //   },
+    // }, // must be after other CSS plugins
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
   // for avoiding CORS while developing Netlify Functions locally

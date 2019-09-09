@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const Nav = styled.nav`
     z-index: 3;
     height: 75px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
     .container-left{
         display: inline-block;
         margin-left: 10%;

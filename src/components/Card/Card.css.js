@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const Content = styled.div`
   max-width: 800px;
   top: 50%; left: 50%;
-  min-width: 50%;
+  min-width: 300px;
+  width: 90%;
   max-height: 80vh;
   height: 500px;
   position: absolute;
