@@ -8,9 +8,9 @@ const IndexPagePreview = ({ entry, widgetFor }) => {
   if (data) {
     return (
       <IndexPageTemplate
-        content={widgetFor('body')}
         title={data.title}
         heading={data.heading}
+        content={widgetFor('body')}
       />
     )
   } else {
