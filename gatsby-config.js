@@ -80,7 +80,7 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-styled-components`,
+   // `gatsby-plugin-styled-components`,
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {

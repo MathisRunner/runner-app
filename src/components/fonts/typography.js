@@ -8,7 +8,7 @@ const typo = new Typography({
   baseLineHeight: 1.5,
   headerFontFamily: ['Monoton', 'georgia', 'serif'],
   bodyFontFamily: ['Roboto', 'sans-serif'],
-  scaleRatio: 1.8
+  scaleRatio: 2.3
 })
 
 

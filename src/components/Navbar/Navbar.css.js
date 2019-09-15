@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Nav = styled.nav`
     z-index: 3;
-    height: 75px;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -19,7 +18,7 @@ export const Nav = styled.nav`
         z-index: 3;
     }
     .navbar-brand{
-        padding: 0px 20px;
+        padding-right: 20px;
     }
     .navbar-item{
         padding: 0px 10px;

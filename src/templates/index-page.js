@@ -4,40 +4,40 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout';
 import Card from '../components/Card/Card.js';
+import Content, { HTMLContent } from '../components/Content';
+
+import '../components/styles.css';
 
 export const IndexPageTemplate = ({
-  image,
+  content,
   title,
   heading,
-  intro,
-}) => (
-  <div>
+}) => {
+  const PostContent = HTMLContent || Content;
+  return <div>
     <Card>
         <h1 className="text-section title">{title}</h1>
-        <h2 className="text-section subheading">{heading} </h2>
+        <h2 className="text-section subheading padding-bottom-s">{heading} </h2>
+        <PostContent content={content} className="no-margin"/>
     </Card>
   </div>
-)
+}
+
 
 IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
+  content: PropTypes.object
 }
 
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
-
+  const { frontmatter, html } = data.markdownRemark;
   return (
     <Layout>
       <IndexPageTemplate
-        image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
-        intro={frontmatter.intro}
+        content={html}
       />
     </Layout>
   )
@@ -59,30 +59,10 @@ export default IndexPage;
 export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+      html
       frontmatter {
         title
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
         heading
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            text
-          }
-          heading
-          description
-        }
       }
     }
   }

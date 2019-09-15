@@ -6,7 +6,7 @@ export const Content = styled.div`
   min-width: 300px;
   width: 90%;
   max-height: 80vh;
-  height: 500px;
+  min-height: 300px;
   position: absolute;
   transform: translate(-50%, -50%);
   text-align: center;
