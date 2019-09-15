@@ -16,7 +16,7 @@ export const IndexPageTemplate = ({
   const PostContent = HTMLContent || Content;
   return <div>
     <Card>
-        <h1 className="text-section title">{title}</h1>
+        <h1 className="text-section title">{title}{title}</h1>
         <h2 className="text-section subheading padding-bottom-s">{heading} </h2>
         <PostContent content={content} className="no-margin"/>
     </Card>
