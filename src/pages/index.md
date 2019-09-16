@@ -1,8 +1,10 @@
 ---
 templateKey: index-page
-title: Keep Calm - earthy
-heading: By the Earthy Project
+title: Home
+heading: Earthy
 ---
-[Keep Calm](https://earthy-games.itch.io/keep-calm-earthy) is an infinite runner app on itch.io for the web browser. 
+play our games:                                                                       become a dev:
 
-100% of proceeds go to charity.
+\    
+
+\
