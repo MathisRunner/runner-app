@@ -1,5 +1,5 @@
 ---
 templateKey: about-page
-title: Keep Calm
+title: what is Earthy?
 ---
-[Keep Calm](https://earthy-games.itch.io/keep-calm-earthy) was made collaboratively by a team of developers online.
+Earthy is a project that consists of volunteer game developers, web devs an music composers, artist,... A lot of nice people. The Earthy projects makes games and the special thing about this is that 100ù of the revenue those games make goes to a charity fund like a fund for planting trees for example.
