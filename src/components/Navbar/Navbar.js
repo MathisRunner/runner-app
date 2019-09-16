@@ -26,7 +26,7 @@ const Navbar = class extends React.Component {
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo" activeStyle={this.state.activeStyles}>
               {/* <img src={logo} alt="Kaldi" style={{ width: '88px' }} /> */}
-              <h1>Runner App</h1>
+              <h1>Keep Calm</h1>
             </Link>
           </div>
           <div
