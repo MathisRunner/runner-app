@@ -16,6 +16,26 @@ export const Content = styled.div`
     width: 100%; 
     max-height:100%;
     overflow: auto;
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: ${props => props.theme.secondary};
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: ${props => props.theme.primary};
+      opacity: 0.8;
+    }
+    
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: ${props => props.theme.primary};
+      opacity: 1;
+    }
   }
 
 `

@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby'
-
-import Layout from '../components/Layout';
 import Card from '../components/Card/Card.js';
 import Content, { HTMLContent } from '../components/Content';
 
@@ -31,13 +29,6 @@ IndexPageTemplate.propTypes = {
 const IndexPage = ({ data }) => {
   const { frontmatter, html } = data.markdownRemark;
   return (
-    // <Layout>
-    //   <IndexPageTemplate
-    //     title={frontmatter.title}
-    //     heading={frontmatter.heading}
-    //     content={html}
-    //   />
-    // </Layout>
     <IndexPageTemplate
     title={frontmatter.title}
     heading={frontmatter.heading}

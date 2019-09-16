@@ -10,7 +10,7 @@ const typo = new Typography({
   bodyFontFamily: ['Roboto', 'sans-serif'],
   scaleRatio: 2,
   overrideStyles: ({ adjustFontSizeTo, rhythm }, options, styles) => ({
-      '@media screen and (min-width: 600px){h1{font-size:180%} h2, p, a{font-size:150%}}': {},
+      '@media screen and (min-width: 600px){h1{font-size:180%} h2, p{font-size:150%}}': {},
   })
 })
 
