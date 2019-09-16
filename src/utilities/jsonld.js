@@ -4,9 +4,22 @@ const getStructuredData = () => {
 //word count, about, organization
 return JSON.stringify({
     "@context":"https://schema.org/",
-    "@type":"Product",
+    "@type":"VideoGame",
     "name":"Product Name",
-    "aggregateRating": {
+    "playMode": "SinglePlayer",
+    "gamePlatform": "browser",
+    "downloadUrl": "https://earthy-games.itch.io/keep-calm-earthy",
+    "screenshot": "https://img.itch.zone/aW1nLzI0OTIyNjgucG5n/347x500/orvskh.png",
+    "about": "an infinite runner game where all profits go to charity",
+    "applicationCategory": "Game",
+    "operatingSystem": "web browser"
+    });
+}
+
+export default getStructuredData;
+
+/**
+ *     "aggregateRating": {
       "@type":"AggregateRating",
       "ratingValue":4.3,
       "reviewCount":197
@@ -49,8 +62,4 @@ return JSON.stringify({
         }
       }
     ]
-    });
-}
-
-export default getStructuredData;
-
+ */

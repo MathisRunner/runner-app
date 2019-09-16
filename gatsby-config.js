@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: 'Keep Calm - Earthy',
     description:
-      '"keep calm" is a game made by the earthy project.',
+      '"Keep Calm" is a game made by the earthy project.',
     gameUrl: 'https://earthy-games.itch.io/keep-calm-earthy'
   },
   plugins: [
@@ -91,13 +91,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Mathis Runner App`,
-        short_name: `Runner App`,
+        name: `Keep Calm`,
         start_url: `/`,
-        background_color: `orange`,
+        background_color: `yellow`,
         theme_color: `hotpink`,
         display: `fullscreen`,
-        icon: `src/img/randomIcon.png`
+        icon: `src/img/runnerIcon512.png`
       },
     },
     {
