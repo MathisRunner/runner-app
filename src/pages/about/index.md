@@ -1,7 +1,5 @@
 ---
 templateKey: about-page
-title: Infinite Runner
+title: Keep Calm
 ---
-### Runner for Charity
-
-A runner game where the profits go to charityte. Rotate to fit through the incomming shape.
+[Keep Calm](https://earthy-games.itch.io/keep-calm-earthy) was made collaboratively by a team of developers online.
