@@ -2,9 +2,10 @@ var proxy = require('http-proxy-middleware')
 
 module.exports = {
   siteMetadata: {
-    title: 'Mathis Runner App',
+    title: 'Keep Calm - Earthy',
     description:
-      'A website for the upcoming runner app for charity',
+      '"keep calm" is a game made by the earthy project.',
+    gameUrl: 'https://earthy-games.itch.io/keep-calm-earthy'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -36,6 +37,12 @@ module.exports = {
           pathToConfigModule: `src/components/fonts/typography.js`,
         }
      },
+     {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/Layout.js`),
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -80,13 +87,7 @@ module.exports = {
         ],
       },
     },
-   // `gatsby-plugin-styled-components`,
-    {
-      resolve: 'gatsby-plugin-netlify-cms',
-      options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-      },
-    },
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -105,13 +106,12 @@ module.exports = {
         offlineGoogleAnalytics: true
       },
     },
-    // {
-    //   resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
-    //   options: {
-    //     develop: true, // Activates purging in npm run develop
-    //     purgeOnly: ['/all.sass'], // applies purging only on the bulma css file
-    //   },
-    // }, // must be after other CSS plugins
+    {
+      resolve: 'gatsby-plugin-netlify-cms',
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+      },
+    },
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
   // for avoiding CORS while developing Netlify Functions locally

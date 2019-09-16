@@ -14,13 +14,11 @@ export const IndexPageTemplate = ({
   heading,
 }) => {
   const PostContent = HTMLContent || Content;
-  return <div>
-    <Card>
-        <h1 className="text-section title">{title}{title}</h1>
-        <h2 className="text-section subheading padding-bottom-s">{heading} </h2>
-        <PostContent content={content} className="no-margin"/>
-    </Card>
-  </div>
+  return <Card key="index">
+  <h1 className="text-section title margin-top-s">{title}</h1>
+  <h2 className="text-section subheading padding-bottom-s">{heading} </h2>
+  <PostContent content={content} className="no-margin"/>
+</Card>
 }
 
 
@@ -33,13 +31,18 @@ IndexPageTemplate.propTypes = {
 const IndexPage = ({ data }) => {
   const { frontmatter, html } = data.markdownRemark;
   return (
-    <Layout>
-      <IndexPageTemplate
-        title={frontmatter.title}
-        heading={frontmatter.heading}
-        content={html}
-      />
-    </Layout>
+    // <Layout>
+    //   <IndexPageTemplate
+    //     title={frontmatter.title}
+    //     heading={frontmatter.heading}
+    //     content={html}
+    //   />
+    // </Layout>
+    <IndexPageTemplate
+    title={frontmatter.title}
+    heading={frontmatter.heading}
+    content={html}
+  />
   )
 }
 

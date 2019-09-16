@@ -6,6 +6,7 @@ export const Nav = styled.nav`
     top: 0px;
     left: 0px;
     right: 0px;
+    padding-top: 20px;
     .container-left{
         display: inline-block;
         margin-left: 10%;
@@ -14,7 +15,6 @@ export const Nav = styled.nav`
     .navbar-brand, .navbar-menu, .navbar-item{
         display: inline-block;
         color: ${props => props.theme.text};
-        line-height: 75px;
         z-index: 3;
     }
     .navbar-brand{

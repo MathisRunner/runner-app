@@ -7,16 +7,18 @@ import { withPrefix } from "gatsby"
 import styled, {ThemeProvider} from 'styled-components';
 import NoScript from './NoScript/NoScript.js';
 import './NoScript/NoScript.css';
+import { globalHistory } from "@reach/router"
+import getStructuredData from './../utilities/jsonld';
 
 const theme = {
   primary: "hotpink",
   secondary: "yellow",
   neutral: 'white',
-  text: 'grey',
+  text: 'black',
   bgShapeBorderSize: '30px'
 };
 
-
+  
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
   return (
@@ -56,6 +58,7 @@ const TemplateWrapper = ({ children }) => {
         <meta property="og:title" content={title} />
         <meta property="og:url" content="/" />
         <meta property="og:image" content={`${withPrefix("/")}img/og-image.jpg`} />
+        <script className='structured-data-list' type="application/ld+json">{getStructuredData()}</script>
       </Helmet>
       <ThemeProvider theme={theme}>
         <Container>
@@ -67,7 +70,7 @@ const TemplateWrapper = ({ children }) => {
           </Bg>
           <Site>
             <Navbar className="noscriptFadeIn"  />
-            <div className="noscriptFadeIn" style={{height: '100%'}}>{children}</div>
+            <div className="noscriptFadeIn" style={{height: '100%'}} key={globalHistory.location.pathname} id="site-content">{children}</div>
             <NoScript />
           </Site>
         </Container>

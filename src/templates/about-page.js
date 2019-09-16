@@ -9,14 +9,12 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
 
   return (
-    <section className="section section--gradient">
-      <Card>
-      <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-              </h2>
-              <PageContent className="content" content={content} />
-      </Card>
-    </section>
+    <Card key="about">
+    <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
+              {title}
+            </h2>
+            <PageContent className="content" content={content} />
+    </Card>
   )
 }
 
@@ -30,13 +28,18 @@ const AboutPage = ({ data }) => {
   const { markdownRemark: post } = data
 
   return (
-    <Layout>
-      <AboutPageTemplate
+    // <Layout>
+    //   <AboutPageTemplate
+    //     contentComponent={HTMLContent}
+    //     title={post.frontmatter.title}
+    //     content={post.html}
+    //   />
+    // </Layout>
+    <AboutPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
         content={post.html}
       />
-    </Layout>
   )
 }
 

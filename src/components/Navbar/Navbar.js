@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import github from '../../img/github-icon.svg'
 import logo from '../../img/logo.svg';
 import {Nav} from './Navbar.css.js';
+import {withTheme} from 'styled-components';
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -11,6 +12,7 @@ const Navbar = class extends React.Component {
     this.state = {
       active: false,
       navBarActiveClass: '',
+      activeStyles: {color: props.theme.primary}
     }
   }
 
@@ -20,10 +22,12 @@ const Navbar = class extends React.Component {
         className={`navbar is-transparent ${this.props.className}`}
         role="navigation"
         aria-label="main-navigation"
+        id="navbar"
+        key="navbar"
       >
         <div className="container-left">
           <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
+            <Link to="/" className="navbar-item" title="Logo" activeStyle={this.state.activeStyles}>
               {/* <img src={logo} alt="Kaldi" style={{ width: '88px' }} /> */}
               <h1>Runner App</h1>
             </Link>
@@ -33,7 +37,7 @@ const Navbar = class extends React.Component {
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
+              <Link className="navbar-item" to="/about" activeStyle={this.state.activeStyles}>
                 About
               </Link>
             </div>
@@ -44,5 +48,5 @@ const Navbar = class extends React.Component {
   }
 }
 
-export default Navbar
+export default withTheme(Navbar);
 
