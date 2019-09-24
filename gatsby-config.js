@@ -93,8 +93,8 @@ module.exports = {
       options: {
         name: `Keep Calm`,
         start_url: `/`,
-        background_color: `yellow`,
-        theme_color: `hotpink`,
+        background_color: `#8fff9aff`,
+        theme_color: `#ee8a88ff`,
         display: `fullscreen`,
         icon: `src/img/runnerIcon512.png`
       },

@@ -7,13 +7,13 @@ import { withPrefix } from "gatsby"
 import styled, {ThemeProvider} from 'styled-components';
 import NoScript from './NoScript/NoScript.js';
 import './NoScript/NoScript.css';
-import { globalHistory } from "@reach/router"
+import { globalHistory } from "@reach/router";
 import getStructuredData from './../utilities/jsonld';
 
 const theme = {
   primary: "#ee8a88ff",
   secondary: "#8fff9aff",
-  shape1: "#9FFF3B",
+  shape1: "#9FFF3B", //the colors of the expanding shapes in the bg
   shape2: "#8fff9aff",
   shape3: "#48FFDF",
   shape4: "#ee8a88ff",
