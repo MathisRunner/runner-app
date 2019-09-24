@@ -14,5 +14,5 @@ body, html{
 .noscriptFadeIn{
     opacity: 1 !important;
     transform: translateX(0) translateY(0) scale(1) scaleX(1) scaleY(1) translate(0, 0);
-    animation: fadeInNoScript 1s ease forwards;
+    animation: fadeInNoScript 0.3s ease forwards;
 }
