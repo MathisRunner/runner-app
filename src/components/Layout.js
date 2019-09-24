@@ -11,12 +11,12 @@ import { globalHistory } from "@reach/router";
 import getStructuredData from './../utilities/jsonld';
 
 const theme = {
-  primary: "#ee8a88ff",
-  secondary: "#8fff9aff",
+  primary: "#ee8a88",
+  secondary: "#8fff9a",
   shape1: "#9FFF3B", //the colors of the expanding shapes in the bg
-  shape2: "#8fff9aff",
+  shape2: "#8fff9a",
   shape3: "#48FFDF",
-  shape4: "#ee8a88ff",
+  shape4: "#ee8a88",
   neutral: 'white',
   text: 'black',
   bgShapeBorderSize: '30px',

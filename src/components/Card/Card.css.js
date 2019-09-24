@@ -11,6 +11,7 @@ export const Content = styled.div`
   text-align: center;
   padding: 20px;
   color: ${props => props.theme.text};
+  background-color: ${props => props.theme.secondary};
   background-image: linear-gradient(25deg, ${props => props.theme.primary}, ${props => props.theme.secondary});
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   .cardcontent{
