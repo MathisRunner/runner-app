@@ -6,16 +6,15 @@ import Content, { HTMLContent } from '../components/Content';
 
 import '../components/styles.css';
 import Banner from '../components/Banner/Banner';
-import NatureBg from '../components/NatureBg/NatureBg';
 
 export const IndexPageTemplate = ({
   content,
   title,
-  heading,
-  banner
+//   heading,
+  bannerImage
 }) => {
   const PostContent = HTMLContent || Content;
-  console.log(`IndexPage graphql  Banner img`, banner.childImageSharp.fluid);
+  //console.log(`IndexPage graphql  Banner img`, banner.childImageSharp.fluid);
   return <div style={{height:'100%'}}>
     {/* <Banner img={banner.childImageSharp.fluid.src}>
       <Img fluid={banner.childImageSharp.fluid} />
@@ -26,26 +25,27 @@ export const IndexPageTemplate = ({
       <h2 className="text-section subheading padding-bottom-s">{heading} </h2>
       <PostContent content={content} className="no-margin"/>
     </Card> */}
-    <NatureBg />
+    <h1>An App</h1>
   </div>
 }
 
 
 IndexPageTemplate.propTypes = {
   title: PropTypes.string,
-  heading: PropTypes.string,
+  bannerImage: PropTypes.object,
   content: PropTypes.object
 }
 
 const IndexPage = ({ data }) => {
   const { frontmatter, html } = data.markdownRemark;
-  console.log(`IndexPage graphql data`, data)
+  console.log(`AppPage graphql data`, data)
   return (
     <IndexPageTemplate
     title={frontmatter.title}
-    heading={frontmatter.heading}
+    bannerImage={frontmatter.bannerImage}
+    //heading={frontmatter.heading}
     content={html}
-    banner={data.banner}
+   // banner={data.banner}
   />
   )
 }
@@ -64,21 +64,31 @@ export default IndexPage;
 
 
 export const pageQuery = graphql`
-  query IndexPageTemplate {
-    banner: file(sourceInstanceName: {eq: "images"}, name: {eq: "runner"}) {
+  query AppPageTemplate {
+
+    markdownRemark(frontmatter: { templateKey: { eq: "app-page" } }) {
+      html
+      frontmatter {
+        title
+        date
+        bannerImage {
+            childImageSharp {
+              fluid(maxWidth: 1280) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+        }
+      }
+    }
+  }
+`
+
+/**
+ *     banner: file(sourceInstanceName: {eq: "images"}, name: {eq: "runner"}) {
       childImageSharp {
         fluid(maxWidth: 1280) {
           ...GatsbyImageSharpFluid
         }
       }
     },
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
-      html
-      frontmatter {
-        title
-        heading
-      }
-    }
-  }
-`
-
+ */

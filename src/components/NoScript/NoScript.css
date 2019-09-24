@@ -1,6 +1,3 @@
-body, html{
-    background-color: magenta;
-}
 
 @keyframes fadeInNoScript{
     from{opacity: 0; transform: translateY(-50%)}

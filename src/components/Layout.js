@@ -71,12 +71,12 @@ const TemplateWrapper = ({ children }) => {
       </Helmet>
       <ThemeProvider theme={theme}>
         <Container>
-          <Bg>
+          {/* <Bg>
             <div className="shape shapeA" />
             <div className="shape shapeB" />
             <div className="shape shapeC" />
             <div className="shape shapeD" />
-          </Bg>
+          </Bg> */}
           <Site>
             <Navbar className="noscriptFadeIn"  />
             <div className="noscriptFadeIn fill-height"  key={globalHistory.location.pathname} id="site-content">{children}</div>
