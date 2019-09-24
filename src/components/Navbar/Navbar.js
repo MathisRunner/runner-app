@@ -9,7 +9,7 @@ const Navbar = class extends React.Component {
     this.state = {
       active: false,
       navBarActiveClass: '',
-      activeStyles: {color: props.theme.primary}
+      activeStyles: {color: props.theme.secondary}
     }
   }
 

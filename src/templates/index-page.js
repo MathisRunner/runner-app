@@ -5,18 +5,27 @@ import Card from '../components/Card/Card.js';
 import Content, { HTMLContent } from '../components/Content';
 
 import '../components/styles.css';
+import Banner from '../components/Banner/Banner';
 
 export const IndexPageTemplate = ({
   content,
   title,
   heading,
+  banner
 }) => {
   const PostContent = HTMLContent || Content;
-  return <Card key="index">
-  <h1 className="text-section title margin-top-s">{title}</h1>
-  <h2 className="text-section subheading padding-bottom-s">{heading} </h2>
-  <PostContent content={content} className="no-margin"/>
-</Card>
+  console.log(`IndexPage graphql  Banner img`, banner.childImageSharp.fluid);
+  return <div style={{height:'100%'}}>
+    {/* <Banner img={banner.childImageSharp.fluid.src}>
+      <Img fluid={banner.childImageSharp.fluid} />
+    </Banner> */}
+    <Banner img={banner} />
+    <Card key="index">
+      <h1 className="text-section title margin-top-s">{title}</h1>
+      <h2 className="text-section subheading padding-bottom-s">{heading} </h2>
+      <PostContent content={content} className="no-margin"/>
+    </Card>
+  </div>
 }
 
 
@@ -28,11 +37,13 @@ IndexPageTemplate.propTypes = {
 
 const IndexPage = ({ data }) => {
   const { frontmatter, html } = data.markdownRemark;
+  console.log(`IndexPage graphql data`, data)
   return (
     <IndexPageTemplate
     title={frontmatter.title}
     heading={frontmatter.heading}
     content={html}
+    banner={data.banner}
   />
   )
 }
@@ -52,6 +63,13 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
+    banner: file(sourceInstanceName: {eq: "images"}, name: {eq: "runner"}) {
+      childImageSharp {
+        fluid(maxWidth: 1280) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    },
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       html
       frontmatter {
@@ -61,3 +79,4 @@ export const pageQuery = graphql`
     }
   }
 `
+

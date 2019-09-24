@@ -6,10 +6,11 @@ export const Content = styled.div`
   min-width: 300px;
   width: 90%;
   max-height: 80vh;
-  position: absolute;
-  transform: translate(-50%, -50%);
+  ${props => props.center?`position: absolute;
+  transform: translate(-50%, -50%);`:` margin: 30px auto;`}
   text-align: center;
   padding: 20px;
+  color: ${props => props.theme.text};
   background-image: linear-gradient(25deg, ${props => props.theme.primary}, ${props => props.theme.secondary});
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   .cardcontent{

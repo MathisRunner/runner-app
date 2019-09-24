@@ -1,0 +1,16 @@
+@keyframes scaleUp {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+@keyframes slideDown {
+    from {transform: translateY(-100%); opacity: 0;}
+    to {transform: translateY(0px); opacity: 1;}
+}
+/* .animate-scale-up{
+    animation: scaleUp 1s ease 1s forwards;
+} */
+
+.shadow{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+

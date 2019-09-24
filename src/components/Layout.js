@@ -11,11 +11,21 @@ import { globalHistory } from "@reach/router"
 import getStructuredData from './../utilities/jsonld';
 
 const theme = {
-  primary: "hotpink",
-  secondary: "yellow",
+  primary: "#ee8a88ff",
+  secondary: "#8fff9aff",
+  shape1: "#9FFF3B",
+  shape2: "#8fff9aff",
+  shape3: "#48FFDF",
+  shape4: "#ee8a88ff",
   neutral: 'white',
   text: 'black',
-  bgShapeBorderSize: '30px'
+  bgShapeBorderSize: '30px',
+  navHeight: '70px',
+  animS: '0.3s',
+  animM:'1s',
+  breakS: '480px',
+  fontL: '1.3rem',
+  fontS: '0.9rem',
 };
 
   
@@ -69,7 +79,7 @@ const TemplateWrapper = ({ children }) => {
           </Bg>
           <Site>
             <Navbar className="noscriptFadeIn"  />
-            <div className="noscriptFadeIn" style={{height: '100%'}} key={globalHistory.location.pathname} id="site-content">{children}</div>
+            <div className="noscriptFadeIn fill-height"  key={globalHistory.location.pathname} id="site-content">{children}</div>
             <NoScript />
           </Site>
         </Container>
@@ -146,18 +156,18 @@ const Bg = styled.div`
   }
   .shapeA{
     animation: expand45 10s  ease-in 0s infinite;
-    border: ${props => props.theme.bgShapeBorderSize} solid ${props => props.theme.primary};
+    border: ${props => props.theme.bgShapeBorderSize} solid ${props => props.theme.shape1};
   }
   .shapeB{
     animation: expand 10s  ease-in 3s infinite;
-    border: ${props => props.theme.bgShapeBorderSize} solid ${props => props.theme.secondary};
+    border: ${props => props.theme.bgShapeBorderSize} solid ${props => props.theme.shape2};
   }
   .shapeC{
     animation: expand45 10s  ease-in 5.5s infinite;
-    border: ${props => props.theme.bgShapeBorderSize} solid red;
+    border: ${props => props.theme.bgShapeBorderSize} solid ${props => props.theme.shape3};
   }
   .shapeD{
     animation: expand 10s  ease-in 8s infinite;
-    border: ${props => props.theme.bgShapeBorderSize} solid orange;
+    border: ${props => props.theme.bgShapeBorderSize} solid ${props => props.theme.shape4};
   }
 `
