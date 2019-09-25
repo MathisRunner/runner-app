@@ -10,16 +10,10 @@ const BannerView = (props) => {
             return <Img fluid={props.img.childImageSharp.fluid} />
         }
     }
-    const renderCallsToAction = () => {
-        return <CallsToAction>
-            <Button href="https://play.google.com/store/apps/details?id=com.Earthy.keepcalm">Play Our Games</Button>
-            <Button href="https://discord.gg/">Develop on Our Discord</Button>
-        </CallsToAction>
-    }
+
     return <Banner >
         <div className="banner-img">
         {renderImg()}
-        {renderCallsToAction()}
         </div>
     </Banner>
 }

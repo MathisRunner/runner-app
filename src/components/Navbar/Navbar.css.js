@@ -23,5 +23,6 @@ export const Nav = styled.nav`
     }
     .navbar-item{
         padding: 0px 10px;
+        font-size: 1.5rem;
     }
 `

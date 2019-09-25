@@ -1,10 +1,52 @@
-backend:
-  name: git-gateway
-  branch: master
+import React from 'react'
+import PropTypes from 'prop-types'
+import { AppPageTemplate } from '../../templates/app-page'
 
-media_folder: static/img
-public_folder: /img
+const AppPagePreview = ({ entry, widgetFor }) => (
+  <AppPageTemplate
+    title={entry.getIn(['data', 'title'])}
+    description={entry.getIn(['data', 'Description'])}
+    bannerImage={widgetFor('bannerImage')}
+    content={widgetFor('body')}
+  />
+)
 
+AppPagePreview.propTypes = {
+  entry: PropTypes.shape({
+    getIn: PropTypes.func,
+  }),
+  widgetFor: PropTypes.func,
+}
+
+export default AboutPagePreview
+
+/**
+ * 
+ * const AppPage = ({ data }) => {
+  const { frontmatter, html } = data.markdownRemark;
+  console.log(`AppPage graphql data`, data)
+  return (
+    <AppPageTemplate
+    title={frontmatter.title}
+    bannerImage={frontmatter.bannerImage}
+    contentComponent={HTMLContent}
+    content={html}
+   // banner={data.banner}
+  />
+  )
+}
+
+AppPage.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.object,
+    }),
+  }),
+}
+
+export default AppPage;
+
+ * 
 collections:
   - name: "game"
     label: "game"
@@ -38,3 +80,5 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
+
+ */

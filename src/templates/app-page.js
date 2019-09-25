@@ -7,15 +7,14 @@ import Content, { HTMLContent } from '../components/Content';
 import '../components/styles.css';
 import Banner from '../components/Banner/Banner';
 
-export const IndexPageTemplate = ({
-  content,
+export const AppPageTemplate = ({
   title,
-//   heading,
+  content, contentComponent,
   bannerImage
 }) => {
-  const PostContent = HTMLContent || Content;
+  const PageContent = contentComponent || Content
   //console.log(`IndexPage graphql  Banner img`, banner.childImageSharp.fluid);
-  return <div style={{height:'100%'}}>
+  return <div style={{height:'100%', background: 'white'}}>
     {/* <Banner img={banner.childImageSharp.fluid.src}>
       <Img fluid={banner.childImageSharp.fluid} />
     </Banner> */}
@@ -25,32 +24,36 @@ export const IndexPageTemplate = ({
       <h2 className="text-section subheading padding-bottom-s">{heading} </h2>
       <PostContent content={content} className="no-margin"/>
     </Card> */}
-    <h1>An App</h1>
+     <Banner img={bannerImage} />
+     <Card>
+         <h1 style={{fontSize: '2rem'}}>{title}</h1>
+        <PageContent className="content" content={content} />
+     </Card>
   </div>
 }
 
 
-IndexPageTemplate.propTypes = {
+AppPageTemplate.propTypes = {
   title: PropTypes.string,
   bannerImage: PropTypes.object,
   content: PropTypes.object
 }
 
-const IndexPage = ({ data }) => {
+const AppPage = ({ data }) => {
   const { frontmatter, html } = data.markdownRemark;
   console.log(`AppPage graphql data`, data)
   return (
-    <IndexPageTemplate
+    <AppPageTemplate
     title={frontmatter.title}
     bannerImage={frontmatter.bannerImage}
-    //heading={frontmatter.heading}
+    contentComponent={HTMLContent}
     content={html}
    // banner={data.banner}
   />
   )
 }
 
-IndexPage.propTypes = {
+AppPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -58,7 +61,7 @@ IndexPage.propTypes = {
   }),
 }
 
-export default IndexPage;
+export default AppPage;
 
 
 

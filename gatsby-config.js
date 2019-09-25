@@ -2,9 +2,9 @@ var proxy = require('http-proxy-middleware')
 
 module.exports = {
   siteMetadata: {
-    title: 'Keep Calm - Earthy',
+    title: 'Earthy Games',
     description:
-      '"Keep Calm" is a game made by the earthy project.',
+      'Games made by the Earthy project. All proceeds go to growing trees.',
     gameUrl: 'https://earthy-games.itch.io/keep-calm-earthy'
   },
   plugins: [
