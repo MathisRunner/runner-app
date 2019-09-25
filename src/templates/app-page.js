@@ -40,15 +40,15 @@ AppPageTemplate.propTypes = {
 }
 
 const AppPage = ({ data }) => {
+    console.log(`AppPage graphql data`, data)
   const { frontmatter, html } = data.markdownRemark;
-  console.log(`AppPage graphql data`, data)
+  
   return (
     <AppPageTemplate
     title={frontmatter.title}
     bannerImage={frontmatter.bannerImage}
     contentComponent={HTMLContent}
     content={html}
-   // banner={data.banner}
   />
   )
 }
@@ -67,13 +67,16 @@ export default AppPage;
 
 
 export const pageQuery = graphql`
-  query AppPageTemplate {
+  query AppPageTemplate($path: String!) {
 
-    markdownRemark(frontmatter: { templateKey: { eq: "app-page" } }) {
+    markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
         title
         date
+        key
+        path
+        description
         bannerImage {
             childImageSharp {
               fluid(maxWidth: 1280) {
