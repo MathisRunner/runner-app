@@ -29,7 +29,7 @@ export const IndexPageTemplate = ({
     {/* <Banner img={banner} />
      */}
    
-    <Card key="index" center>
+    <Card key="index" >
         <h1 className="text-section title margin-top-s">{title}</h1>
         <h2 className="text-section subheading padding-bottom-s">{heading} </h2>
         <PostContent content={content} className="no-margin"/>

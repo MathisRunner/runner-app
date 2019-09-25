@@ -12,10 +12,10 @@ const Sun = (props) => {
                         <stop stopColor={props.theme.sun} offset="0" />
                     </linearGradient>
                 </defs>
-                    <circle cx="50%" cy="50%" r="809" className="price-halo-circle" stroke="url(#e)" 
-                            strokeDasharray="105,175.8" strokeWidth="1500" fill="none" />
+                    <circle cx="50%" cy="50%" r="80" className="price-halo-circle" stroke="url(#e)" 
+                            strokeDasharray="28, 48" strokeWidth="1500" fill="none" />
 
-                    <circle cx="50%" cy="50%" r="50" className="price-halo-circle-center" fill={props.theme.sun} />
+                    <circle cx="50%" cy="50%" r="5" className="price-halo-circle-center" fill={props.theme.sun} />
                 </svg>
     </CelestialBody>
 }

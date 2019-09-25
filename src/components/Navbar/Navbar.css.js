@@ -17,6 +17,7 @@ export const Nav = styled.nav`
         color: ${props => props.theme.text};
         z-index: 3;
         line-height: ${props => props.theme.navHeight};
+        margin: 0px;
     }
     .navbar-brand{
         padding-right: 20px;
@@ -24,5 +25,6 @@ export const Nav = styled.nav`
     .navbar-item{
         padding: 0px 10px;
         font-size: 1.5rem;
+        margin: 0px;
     }
 `

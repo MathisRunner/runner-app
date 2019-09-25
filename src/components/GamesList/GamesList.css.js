@@ -9,15 +9,19 @@ export const Post = styled.span`
     text-decoration: none;
     color: ${props => props.theme.text};
     font-size: 1.2rem;
+    margin: 10px auto;
 `
 export const List = styled.ul`
     list-decoration: none;
-    margin: 10px 0;
     padding: 10px;
     
-    width: 50%;
-    min-width: 480px;
+    
+    width:100%;
     margin: auto;
+    @media (min-width: 480px){
+        width: 50%;
+        min-width: 480px;
+    }
 
     ${props=> {
         var s = '';

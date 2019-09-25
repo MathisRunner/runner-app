@@ -17,7 +17,7 @@ function useWindowSize() {
 const TreeView = (props) => {
     const createTree = (index, width) => {
         let offset = 30*Math.random();
-        return  {x: `${index * (width/MAX_TREES) - width*0.35}`, height: `${100 - offset}%`, y: `${10*offset}`};
+        return  {x: `${index * (width*0.1/MAX_TREES) - width*0.05}`, height: `${100 - offset}%`, y: `${offset}`};
     }
     let [width, height] = useWindowSize();
     const [trees, setTrees] = useState([]);
@@ -60,3 +60,7 @@ const Trees = styled.div`
         animation: scaleIn 3s ease 0s forwards;
     }
 `
+/**
+ *  <image href="/static/plant-2a15cd9c659c11cdbb54e576d68268c5.svg" height="99.5863143792627%" x="71.30000000000001" 
+ * y="4.136856207372919" class="tree" fill="black" stroke="black"></image>
+ */

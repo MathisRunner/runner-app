@@ -8,7 +8,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
 
   return (
-    <Card key="about" center>
+    <Card key="about">
       <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
         {title}
       </h2>

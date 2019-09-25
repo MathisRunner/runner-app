@@ -82,7 +82,7 @@ const TemplateWrapper = ({ children }) => {
            <NatureBg />
           <Site>
             <Navbar className="noscriptFadeIn"  />
-            <div className="noscriptFadeIn fill-height"  key={globalHistory.location.pathname} id="site-content">{children}</div>
+            <div className="noscriptFadeIn fill-height"  key={globalHistory.location.pathname} id="site-content" style={{paddingTop: '100px', overflow: 'hidden'}}>{children}</div>
             <NoScript />
           </Site>
         </Container>
