@@ -9,15 +9,12 @@ import NoScript from './NoScript/NoScript.js';
 import './NoScript/NoScript.css';
 import { globalHistory } from "@reach/router";
 import getStructuredData from './../utilities/jsonld';
+import NatureBg from './NatureBg/NatureBg';
 
 const theme = {
-  primary: "#ee8a88",
-  secondary: "#8fff9a",
-  shape1: "#9FFF3B", //the colors of the expanding shapes in the bg
-  shape2: "#8fff9a",
-  shape3: "#48FFDF",
-  shape4: "#ee8a88",
-  neutral: 'white',
+  primary: "#F2CB05",
+  secondary: "#0ABF04",
+  neutral: '#F2F2F2',
   text: 'black',
   bgShapeBorderSize: '30px',
   navHeight: '70px',
@@ -26,6 +23,11 @@ const theme = {
   breakS: '480px',
   fontL: '1.3rem',
   fontS: '0.9rem',
+  hill1: '#02733E',
+  hill2: '#0ABF04',
+  sun: '#F2CB05',
+  sky: '#F2F2F2',
+  trees: 'black'
 };
 
   
@@ -77,6 +79,7 @@ const TemplateWrapper = ({ children }) => {
             <div className="shape shapeC" />
             <div className="shape shapeD" />
           </Bg> */}
+           <NatureBg />
           <Site>
             <Navbar className="noscriptFadeIn"  />
             <div className="noscriptFadeIn fill-height"  key={globalHistory.location.pathname} id="site-content">{children}</div>

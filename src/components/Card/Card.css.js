@@ -6,6 +6,7 @@ export const Content = styled.div`
   min-width: 300px;
   width: 90%;
   max-height: 80vh;
+  z-index:10;
   ${props => props.center?`position: absolute;
   transform: translate(-50%, -50%);`:` margin: 30px auto;`}
   text-align: center;

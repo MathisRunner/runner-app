@@ -6,7 +6,7 @@ export const Nav = styled.nav`
     top: 0px;
     left: 0px;
     right: 0px;
-    background-color: ${props => props.theme.primary};
+    background-color: ${props => props.theme.secondary};
     .container-left{
         display: inline-block;
         margin-left: 10%;

@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby'
 import Card from '../components/Card/Card.js';
@@ -6,7 +7,9 @@ import Content, { HTMLContent } from '../components/Content';
 
 import '../components/styles.css';
 import Banner from '../components/Banner/Banner';
+import Button from '../components/Button/Button';
 import NatureBg from '../components/NatureBg/NatureBg';
+import CallsToAction from '../components/CallsToAction/CallsToAction';
 
 export const IndexPageTemplate = ({
   content,
@@ -16,17 +19,22 @@ export const IndexPageTemplate = ({
 }) => {
   const PostContent = HTMLContent || Content;
   console.log(`IndexPage graphql  Banner img`, banner.childImageSharp.fluid);
+  const renderCallsToAction = () => {
+      
+  }
   return <div style={{height:'100%'}}>
     {/* <Banner img={banner.childImageSharp.fluid.src}>
       <Img fluid={banner.childImageSharp.fluid} />
     </Banner> */}
     {/* <Banner img={banner} />
-    <Card key="index">
-      <h1 className="text-section title margin-top-s">{title}</h1>
-      <h2 className="text-section subheading padding-bottom-s">{heading} </h2>
-      <PostContent content={content} className="no-margin"/>
-    </Card> */}
-    <NatureBg />
+     */}
+   
+    <Card key="index" center>
+        <h1 className="text-section title margin-top-s">{title}</h1>
+        <h2 className="text-section subheading padding-bottom-s">{heading} </h2>
+        <PostContent content={content} className="no-margin"/>
+        <CallsToAction />
+    </Card>
   </div>
 }
 
@@ -59,8 +67,6 @@ IndexPage.propTypes = {
 }
 
 export default IndexPage;
-
-
 
 
 export const pageQuery = graphql`
